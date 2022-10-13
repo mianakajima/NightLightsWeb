@@ -14,7 +14,7 @@ classes = {0: 'Class 1',
            3: 'Class 4',
            4: 'Class 5'}
 
-def get_random_image_path(class_name: str, num_items=10):
+def get_random_image_path(class_name: str, num_items=5):
     """Returns path of random image in specified class"""
 
     random_image_number = randrange(0, num_items)
