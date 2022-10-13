@@ -60,7 +60,7 @@ def get_naive_bayes_prediction(image):
 def get_CNN_prediction(im_path):
     """ Returns class prediction of image using trained CNN model"""
     CNN_model = CNN()
-    CNN_model.load_state_dict(torch.load('static/models/lights_inital2.pth'))
+    CNN_model.load_state_dict(torch.load('static/models/lights_inital2.pth',  map_location=torch.device('cpu')))
     CNN_model.eval()
 
     transformed_image = transform_image(im_path).reshape((1, 1, 430, 430))
