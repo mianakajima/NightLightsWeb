@@ -1,4 +1,4 @@
-# NightLightsWeb
+# Nightlight Satellite Imagery Population Classification - Flask Web
 
 Flask app to show sample image classifications based on work in this repository: [https://github.com/mianakajima/NightLights](https://github.com/mianakajima/NightLights)
 
