@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Population from Night Lights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for ('static', filename='css/main.css')}}">
+</head>
+<body>
+
+<h1> Population from Night Lights</h1>
+
+<h2> Sample Image Classification </h2>
+
+<p> Reload the page to see more images! </p>
+
+<div class="flex-container">
+     <div class="imresults">
+        <div class="label">
+            Image
+        </div>
+        <div class="nb_results">
+            NaiveBayes
+        </div>
+        <div class="cnn_results">
+            CNN
+        </div>
+
+        <div class="actual_results">
+            Actual
+        </div>
+
+    </div>
+
+
+    <div class="imresults">
+        <div class="im1">
+            <img src="{{im1path}}"/>
+        </div>
+        <div style="background-color: #{{nb_colors[0]}};" class="nb_results">
+            {{nb_predictions[0]}}
+        </div>
+        <div style="background-color: #{{cnn_colors[0]}};" class="cnn_results">
+            {{CNN_predictions[0]}}
+        </div>
+        <div class="actual_results">
+            Class 1
+        </div>
+    </div>
+
+    <div class="imresults">
+        <div class="im1">
+            <img src="{{im2path}}"/>
+        </div>
+        <div style="background-color: #{{nb_colors[1]}};" class="nb_results">
+            {{nb_predictions[1]}}
+        </div>
+        <div style="background-color: #{{cnn_colors[1]}};" class="cnn_results">
+            {{CNN_predictions[1]}}
+        </div>
+        <div class="actual_results">
+            Class 2
+        </div>
+    </div>
+
+
+    <div class="imresults">
+        <div class="im1">
+            <img src="{{im3path}}"/>
+        </div>
+        <div style="background-color: #{{nb_colors[2]}};" class="nb_results">
+            {{nb_predictions[2]}}
+        </div>
+        <div style="background-color: #{{cnn_colors[2]}};" class="cnn_results">
+            {{CNN_predictions[2]}}
+        </div>
+        <div class="actual_results">
+            Class 3
+        </div>
+    </div>
+
+
+    <div class="imresults">
+        <div class="im1">
+            <img src="{{im4path}}"/>
+        </div>
+        <div style="background-color: #{{nb_colors[3]}};" class="nb_results">
+            {{nb_predictions[3]}}
+        </div>
+        <div style="background-color: #{{cnn_colors[3]}};" class="cnn_results">
+            {{CNN_predictions[3]}}
+        </div>
+        <div class="actual_results">
+            Class 4
+        </div>
+    </div>
+
+
+    <div class="imresults">
+        <div class="im1">
+            <img src="{{im5path}}"/>
+        </div>
+        <div style="background-color: #{{nb_colors[4]}};" class="nb_results">
+            {{nb_predictions[4]}}
+        </div>
+        <div style="background-color: #{{cnn_colors[4]}};" class="cnn_results">
+            {{CNN_predictions[4]}}
+        </div>
+        <div class="actual_results">
+            Class 5
+        </div>
+    </div>
+
+</div>
+
+<h2> Background </h2>
+
+
+    <p> The above images show a sample of night light satellite images (from DMSP OLS) classified by population with a Gaussian Naive Bayes baseline model and a Convolutional Neural Network (CNN) model. The classes are as follows: </p>
+
+    <ul>
+        <li>Class 1: Less than 5.7 million </li>
+        <li>Class 2: Between 5.7 million and 9.9 million</li>
+        <li>Class 3: Between 9.9 million and 15.4 million </li>
+        <li>Class 4: Between 15.4 million and 28 million </li>
+        <li>Class 5: Between 28 million and 159 million </li>
+    </ul>
+
+<p> The images are of 200 countries that were sampled over 3 census years (2000, 2005, and 2010) for a total of 600 images. The population bins were made by splitting the sampled cities' populations from the census into 5 quantiles. </p>
+
+<h3> Gaussian Naive Bayes </h3>
+
+<p> As a baseline, I wanted to see how the population would be classified if we just took all the brightness levels from the image and summed it. The Gaussian Naive Bayes was used to classify the images based on the summed brightness of each image. On the dev set, this correctly classified images with an accuracy of 48%.</p>
+
+<h3> CNN </h3>
+
+<p> The trained CNN used 5 convolutional layers and 3 fully connected layers. Each convolutional layer is followed by 2x2 max pooling and has twice the number of channels as the previous layer. </p>
+
+<p> In order to increase number of training images, images were augmented with random rotations, horizontal and vertical flips. </p>
+
+<p> The dev set classification accuracy was 92%! </p>
+
+<p>
+
+</p>
+
+</body>
+</html>

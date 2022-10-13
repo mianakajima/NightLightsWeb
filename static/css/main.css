@@ -1,0 +1,36 @@
+.flex-container{
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container div{
+    margin-left: 1em;
+    flex-shrink: 1;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.imresults{
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    height: 153px;
+}
+
+h1{
+    text-align: center;
+}
+
+body {
+    margin: auto;
+    width: 700px;
+    padding: 50px;
+    font-family: 'Open Sans', sans-serif;
+    color: #444444;
+}
+
